@@ -5,6 +5,7 @@ import { CalculationsComponent } from './components/calculations/calculations.co
 
 const routes: Routes = [
   { path: 'calculations', component: CalculationsComponent },
+  { path: '', redirectTo: '/', pathMatch: 'full' },
 ];
 
 @NgModule({

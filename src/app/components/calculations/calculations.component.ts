@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-calculations',
@@ -8,22 +8,32 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class CalculationsComponent implements OnInit {
 
+  public purchasePrices: number[] = [1111,2222,3333,4444];
+
   myForm: FormGroup; 
 
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
-    const phone = this.fb.group({ 
-      area: [],
-      prefix: [],
-      line: [],
-    })
+    
+  }
 
-    this.myForm = this.fb.group({
-      email: '',
-      homePhone: phone,
-      cellPhone: phone,
-    })
+  officerInputForm = this.fb.group({
+		downPaymentPercentage: [''],
+		upfrontMiFf: [''],
+		miPercentage: [''],
+		estimatedTaxes: [''],
+		estimateHOI: [''],
+		interestRate: [''],
+		mortgageYears: [''],
+    purchasePriceArray:  this.fb.array(this.purchasePrices.map(
+			(price: number) => this.fb.control([ price ])
+		))
+
+	});
+
+  get purchasePriceArray() {
+    return this.officerInputForm.get('purchasePriceArray') as FormArray;
   }
 
 }
