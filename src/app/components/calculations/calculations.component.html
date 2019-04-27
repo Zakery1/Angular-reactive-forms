@@ -1,0 +1,23 @@
+<form [formGroup]="myForm">
+  <input formControlName="email">
+
+    <h4>Cell Phone</h4>
+
+    <div formGroupName="cellPhone">
+      <input formControlName="area">
+      <input formControlName="prefix">
+      <input formControlName="line">
+    </div>
+
+    <h4>Home Phone</h4>
+
+    <div formGroupName="homePhone">
+      <input formControlName="area">
+      <input formControlName="prefix">
+      <input formControlName="line">
+    </div>
+
+    <button routerLink="/">back to home</button>
+    
+</form>
+
