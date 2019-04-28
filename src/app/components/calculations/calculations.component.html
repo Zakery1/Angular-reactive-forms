@@ -1,57 +1,60 @@
-<form [formGroup]="officerInputForm" (ngSubmit)="onSubmit()">
-        the form
-        <div class="ppc-row" formArrayName="purchasePriceArray">
-          <div class="display-pprices display-pprices-l">Purchase Prices</div>
-        <div *ngFor="let purchasePrice of purchasePriceArray.controls; let i=index">
-          <!-- The repeated alias template -->
-          <div class="display-pprices">{{officerInputForm.value.purchasePriceArray[i]}}</div>  
-          </div>
-      </div>
+<div class="calculations-main">
+	<form class="form-main" [formGroup]="officerInputForm" (ngSubmit)="onSubmit()">
+					<div class="ppc-row" formArrayName="purchasePriceArray">
+						<div class="display-pprices display-pprices-l">Purchase Prices</div>
+					<div *ngFor="let purchasePrice of purchasePriceArray.controls; let i=index">
+						<!-- The repeated alias template -->
+						<div class="display-pprices">{{officerInputForm.value.purchasePriceArray[i]}}</div>  
+						</div>
+				</div>
 
-      <div formArrayName="purchasePriceArray">
-          <div *ngFor="let onePurchasePrice of purchasePriceArray.controls; let i=index">
-            <label>
-              Purchase Price {{i+1}} 
-              <input type="number" [formControlName]="i">
-            </label>
-          </div>
-      </div>
-    
-    <label>
-			Down Payment (%)
-			<input type="text" formControlName="downPaymentPercentage" required>
-		</label>
-		<br>
-		<label>
-			Upfront MI/FF (%
-			<input type="text" formControlName="upfrontMiFf" required>
-		</label>
-		<br>
-		<label>
-			Annual MI Percentage (%)
-			<input type="text" formControlName="miPercentage" required>
-		</label>
-		<br>
-		<label>
-			Estimated Taxes (%)
-			<input type="text" formControlName="estimatedTaxes" required>
-		</label>
-		<br>
-		<label>
-			Estimated HOI (%)
-			<input type="text" formControlName="estimateHOI" required>
-		</label>
-		<br>
-		<label>
-			Interest Rate (%)
-			<input type="text" formControlName="interestRate" required>
-		</label>
-		<br>
-		<label>
-			Length of Mortgage (Years)
-			<input type="text" formControlName="mortgageYears" required>
-		</label>		
-		<br>
+				<div formArrayName="purchasePriceArray">
+						<div *ngFor="let onePurchasePrice of purchasePriceArray.controls; let i=index">
+							<label>
+								Purchase Price {{i+1}} 
+								<input type="number" [formControlName]="i">
+							</label>
+						</div>
+				</div>
+			
+			<label>
+				Down Payment (%)
+				<input type="text" formControlName="downPaymentPercentage" required>
+			</label>
+			<br>
+			<label>
+				Upfront MI/FF (%
+				<input type="text" formControlName="upfrontMiFf" required>
+			</label>
+			<br>
+			<label>
+				Annual MI Percentage (%)
+				<input type="text" formControlName="miPercentage" required>
+			</label>
+			<br>
+			<label>
+				Estimated Taxes (%)
+				<input type="text" formControlName="estimatedTaxes" required>
+			</label>
+			<br>
+			<label>
+				Estimated HOI (%)
+				<input type="text" formControlName="estimateHOI" required>
+			</label>
+			<br>
+			<label>
+				Interest Rate (%)
+				<input type="text" formControlName="interestRate" required>
+			</label>
+			<br>
+			<label>
+				Length of Mortgage (Years)
+				<input type="text" formControlName="mortgageYears" required>
+			</label>		
+	</form>
 
-</form>
-<button routerLink="/">back to home</button>
+	<button routerLink="/">back to home</button>
+
+</div>
+
+
