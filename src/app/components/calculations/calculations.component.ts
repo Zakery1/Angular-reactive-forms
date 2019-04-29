@@ -28,7 +28,7 @@ export class CalculationsComponent implements OnInit {
 		mortgageYears: [''],
     purchasePriceArray:  this.fb.array(this.purchasePrices.map(
 			(price: number) => this.fb.control([ price ])
-		))
+    ))
 
 	});
 

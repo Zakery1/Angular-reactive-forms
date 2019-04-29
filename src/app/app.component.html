@@ -3,7 +3,12 @@
   <h1>
     Welcome to {{ title }}!
     <br>
-    <button  routerLink="/calculations">Go to Calculations</button>
+
+    <div *ngIf="router.url === '/some/route'">
+
+    </div>
+
+    <button *ngIf="router.url === '/'" mat-raised-button color="primary" routerLink="/calculations">Go to Calculations</button>
 
   </h1>
 </div>
