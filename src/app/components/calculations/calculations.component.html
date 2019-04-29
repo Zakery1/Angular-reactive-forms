@@ -1,56 +1,63 @@
 <div class="calculations-main">
+
 	<form class="form-main" [formGroup]="officerInputForm" (ngSubmit)="onSubmit()">
+		
 					<div class="ppc-row" formArrayName="purchasePriceArray">
-						<div class="display-pprices display-pprices-l">Purchase Prices</div>
-					<div *ngFor="let purchasePrice of purchasePriceArray.controls; let i=index">
-						<!-- The repeated alias template -->
-						<div class="display-pprices">{{officerInputForm.value.purchasePriceArray[i]}}</div>  
-						</div>
-				</div>
+
+							<div class="display-pprices display-pprices-l">Purchase Prices</div>
+							<div *ngFor="let purchasePrice of purchasePriceArray.controls; let i=index">
+							<!-- The repeated alias template -->
+							<div class="display-pprices">{{officerInputForm.value.purchasePriceArray[i]}}</div>  
+							</div>
+
+					</div>
 
 				<div formArrayName="purchasePriceArray">
 						<div *ngFor="let onePurchasePrice of purchasePriceArray.controls; let i=index">
-							<label>
+							<mat-form-field>
 								Purchase Price {{i+1}} 
-								<input type="number" [formControlName]="i">
-							</label>
+								<input matInput type="number" [formControlName]="i">
+							</mat-form-field>
 						</div>
 				</div>
-			
-			<label>
-				Down Payment (%)
-				<input type="text" formControlName="downPaymentPercentage" required>
-			</label>
+
+				<br><br>
+				<br>
+				<mat-form-field>
+					Down Payment (%)
+					<input matInput type="text" formControlName="downPaymentPercentage" required>
+				</mat-form-field>
+				
 			<br>
-			<label>
+			<mat-form-field>
 				Upfront MI/FF (%
-				<input type="text" formControlName="upfrontMiFf" required>
-			</label>
+				<input matInput type="text" formControlName="upfrontMiFf" required>
+			</mat-form-field>
 			<br>
-			<label>
+			<mat-form-field>
 				Annual MI Percentage (%)
-				<input type="text" formControlName="miPercentage" required>
-			</label>
+				<input matInput type="text" formControlName="miPercentage" required>
+			</mat-form-field>
 			<br>
-			<label>
+			<mat-form-field>
 				Estimated Taxes (%)
-				<input type="text" formControlName="estimatedTaxes" required>
-			</label>
+				<input matInput type="text" formControlName="estimatedTaxes" required>
+			</mat-form-field>
 			<br>
-			<label>
+			<mat-form-field>
 				Estimated HOI (%)
-				<input type="text" formControlName="estimateHOI" required>
-			</label>
+				<input matInput type="text" formControlName="estimateHOI" required>
+			</mat-form-field>
 			<br>
-			<label>
+			<mat-form-field>
 				Interest Rate (%)
-				<input type="text" formControlName="interestRate" required>
-			</label>
+				<input matInput type="text" formControlName="interestRate" required>
+			</mat-form-field>
 			<br>
-			<label>
+			<mat-form-field>
 				Length of Mortgage (Years)
-				<input type="text" formControlName="mortgageYears" required>
-			</label>		
+				<input matInput type="text" formControlName="mortgageYears" required>
+			</mat-form-field>		
 	</form>
 
 	<button mat-raised-button color="primary" routerLink="/">back to home</button>

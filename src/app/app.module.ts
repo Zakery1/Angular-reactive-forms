@@ -2,7 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatFormFieldModule} from '@angular/material';
+import {MatInputModule} from '@angular/material/input';
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,7 +22,9 @@ import { CalculationsComponent } from './components/calculations/calculations.co
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatButtonModule, 
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
