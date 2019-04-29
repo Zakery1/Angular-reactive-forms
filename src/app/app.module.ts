@@ -4,6 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule, MatFormFieldModule} from '@angular/material';
 import {MatInputModule} from '@angular/material/input';
+import {MatListModule} from '@angular/material/list';
 
 
 
@@ -24,7 +25,8 @@ import { CalculationsComponent } from './components/calculations/calculations.co
     MatButtonModule, 
     MatCheckboxModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
