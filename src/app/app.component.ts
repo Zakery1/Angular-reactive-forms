@@ -20,7 +20,7 @@ export class AppComponent {
   name: string;
 
   constructor(
-    private router: Router,
+    public router: Router,
     public dialog: MatDialog
   ) { }
 
