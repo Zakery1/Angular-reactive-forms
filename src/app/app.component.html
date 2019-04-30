@@ -4,13 +4,16 @@
     Welcome to {{ title }}!
     <br>
 
-    <div *ngIf="router.url === '/some/route'">
+    <div class="dash-buttons" *ngIf="router.url === '/'" >
+
+        <button mat-raised-button color="primary" routerLink="/calculations">Go to Calculations</button>
+
+        <button mat-raised-button color="warn" (click)="openDialog()">Click this to see modal</button>
 
     </div>
 
-    <button *ngIf="router.url === '/'" mat-raised-button color="primary" routerLink="/calculations">Go to Calculations</button>
-
   </h1>
+
 </div>
 
 <router-outlet></router-outlet>
