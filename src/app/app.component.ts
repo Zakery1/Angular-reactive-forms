@@ -14,7 +14,7 @@ export interface DialogData {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'calculations';
+  title = 'Mortgage Bro';
 
   animal: string;
   name: string;
