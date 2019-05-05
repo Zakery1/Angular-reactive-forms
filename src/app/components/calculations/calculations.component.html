@@ -4,11 +4,8 @@
 				<div class="list-parent">
 
 					<mat-list class="list">
-						
 						<div class="display-column" formArrayName="purchasePriceArray">
-
 								<h3 mat-subheader>Purchase Prices</h3>
-
 								<mat-list-item *ngFor="let purchasePrice of purchasePriceArray.controls; let i=index">
 															<!-- The repeated alias template -->
 									<div class="display-pprices">
@@ -16,9 +13,19 @@
 									</div>  
 								</mat-list-item>
 						</div>	
-
 					</mat-list>
 
+					<mat-list class="list">
+						<div class="display-column" formArrayName="downPaymentArray">
+						<h3 mat-subheader>Down Payments</h3>
+							<mat-list-item *ngFor="let downPayment of downPaymentArray.controls; let i=index">
+														<!-- The repeated alias template -->
+								<div class="display-pprices">
+									{{officerInputForm.value.downPaymentArray[i]}}
+								</div>  
+							</mat-list-item>
+						</div>	
+					</mat-list>
 				</div>  
 
 

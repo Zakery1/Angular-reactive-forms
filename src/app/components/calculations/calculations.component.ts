@@ -10,6 +10,8 @@ export class CalculationsComponent implements OnInit {
 
   public purchasePrices: number[] = [1111,2222,3333,4444];
 
+  public downPayments: number[] = [1221,4433,2112,3321];
+
   myForm: FormGroup; 
 
   constructor(private fb: FormBuilder) { }
@@ -28,12 +30,20 @@ export class CalculationsComponent implements OnInit {
 		mortgageYears: [''],
     purchasePriceArray:  this.fb.array(this.purchasePrices.map(
 			(price: number) => this.fb.control([ price ])
+    )),
+    downPaymentArray:  this.fb.array(this.downPayments.map(
+      (downPayment: number) => 
+      this.fb.control([ downPayment ]) 
     ))
 
 	});
 
   get purchasePriceArray() {
     return this.officerInputForm.get('purchasePriceArray') as FormArray;
+  }
+
+  get downPaymentArray() {
+    return this.officerInputForm.get('downPaymentArray') as FormArray;
   }
 
 }
